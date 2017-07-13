@@ -1,0 +1,706 @@
+@charset "utf-8";
+@import 'style.scss';
+
+@for $i from 1 through length($screen){
+  @media #{nth($screen,$i)} {
+    .main-content{
+      width: nth($screen-width,$i);
+    }
+  }
+}
+@mixin fontSize($fontSize:0.14rem){
+  @for $i from 1 through length($screen){
+    @media #{nth($screen,$i)} {
+      $fontSize: 0.18rem - $i*0.01rem
+    }
+  }
+  text-indent:$fontSize*2;
+  font-size:$fontSize;
+  line-height:$fontSize*1.8;
+}
+.banner{
+  position:relative;
+  font-size:0;
+  width:100%;
+  @media only screen and (max-width:768px){
+    .company{
+      width:100%;
+      position:absolute;
+      bottom:20px;
+      padding:0 5%;
+      .content{
+        color:#fff;
+        padding:10px;
+        font-size:0.11rem;
+        background:url('../img/company.png') top left no-repeat;
+        background-size:cover;
+        div{
+          line-height:1.5;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width:769px){
+    .company{
+      dispaly:none;
+    }
+  }
+}
+.container{
+  position:relative;
+  width:100%;
+  .pc-menu{
+    height:42px;
+    border-top:1px solid red;
+    @extend %liner-gradinet;
+    .menu-inner{
+      height:100%;
+      width:750px;
+      line-height:30px;
+      font-size:0.16rem;
+      @extend %horizontal-center;
+      @include flexbox;
+      .menu-item{
+        @include flex;
+        padding:6px 0;
+        cursor:pointer;
+        a{
+          display:block;
+          @include full;
+          text-align:center;
+          color:#fff;
+          text-decoration:none;
+          border-left:1px solid red;
+        }
+        &:last-child{
+          border-right:1px solid red;
+        }
+      }
+      .active{
+        background:#470c12;
+      }
+    }
+  }
+  .phone-menu{
+    display:none;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:60px;
+    background-color:#cb0c0a;
+    .menu-wrapper{
+      position:relative;
+      @include full;
+      @include flexbox;
+      @include flex-direction(row);
+      .menu-item{
+        @include flex;
+        text-align:center;
+        padding:12px 0 7px 0;
+        color:#fff;
+        height:100%;
+        line-height:1;
+        font-size:0.11rem;
+        div{
+          margin-top:5px;
+        }
+      }
+      .media-menu-wrapper{
+        position:absolute;
+        height:140px;
+        right:0;
+        bottom:64px;
+        width:20%;
+        .media-menu{
+          height:100%;
+          width:100%;
+          background-color:#cb0c0a;
+          .media-item{
+            margin-top:0!important;
+            height:50%;
+            width:100%;
+            position:relative;
+            text-align:center;
+            padding:12px 0 7px 0;
+            color:#fff;
+            line-height:1;
+            font-size:0.11rem;
+            div{
+              margin-top:5px;
+            }
+          }
+        }
+      }
+      .active{
+        background-color:#930005;
+      }
+    }
+  }
+  @media only screen and (max-width:768px){
+    .pc-menu{
+      display:none;
+    }
+    .phone-menu{
+      display:block;
+    }
+  }
+  .main-content{
+    padding:15px;
+    @media only screen and (max-width:768px){
+      padding:70px 8px 15px 8px;
+      margin-bottom:90px;
+      margin-top:-70px;
+    }
+    overflow-x:hidden;
+    @extend %horizontal-center;
+    @mixin text($color:#d9d8d8){
+      color:$color;
+      @include fontSize;
+    }
+    @mixin title($url){
+      width:100%;
+      margin:30px 0;
+      height:60px;
+      background:url($url) center center no-repeat;
+    }
+
+    @mixin phone-title($url,$top:-90px){
+      position:absolute;
+      top:$top;
+      width:100%;
+      height:40px;
+      background:url($url) center center no-repeat;
+      background-size:contain;
+    }
+    @mixin background($url,$d1,$d2,$size){
+      background:url($url) $d1 $d2 no-repeat;
+      background-size:$size;
+    }
+    @mixin bold($bold:bold){
+      font-weight:$bold;
+    }
+    .time{
+      @include bold;
+      color:#ffce3a;
+    }
+    .remark{
+      color:#ffce3a;
+      line-height:1.2;
+    }
+    @mixin prize-text{
+      @media only screen and (max-width:768px){
+        font-size:0.18rem;
+        line-height:0.24rem;
+        min-width:120px;
+        padding-right:2px;
+      }
+      @media only screen and (min-width:769px){
+        font-size:0.22rem;
+        line-height:0.28rem;
+      }
+    }
+    %sperate{
+      height:1px;
+      width:100%;
+      @include liner-gradinet(left,transparent,#05517d,transparent);
+      & + div{
+        @include prize-text;
+        padding:6px 0;
+      }
+    }
+    .prizegiving{
+      margin:20px 0;
+      @include text;
+      padding:20px 10px;
+      @media only screen and (min-width:769px){
+        padding:20px 30px;
+      }
+      text-indent:0;
+      @media only screen and (max-width:768px){
+        border:1px solid #05517d;
+      }
+      background-color:#1c2b62;
+      .pc-text{
+        text-indent: 2em;
+      }
+      .pc-head{
+        padding-top: 10px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .prize{
+      margin:20px 0;
+      @include text;
+      padding:20px 10px;
+      @media only screen and (min-width:769px){
+        padding:20px 30px;
+      }
+      text-indent:0;
+      @media only screen and (max-width:768px){
+        border:1px solid #05517d;
+      }
+      background-color:#1c2b62;
+      .title{
+        font-size:0.24rem;
+        line-height:0.34rem;
+        @include text-gradinet(top,#fffcf4,#ffd147);
+      }
+      .money{
+        @include bold;
+        color:#ffff00;
+      }
+      .prize-detail{
+        @include flexbox;
+        @include flex-wrap(wrap);
+        .prize-detail-item{
+          @include flex;
+          @include prize-text;
+          padding-bottom:10px;
+          .name{
+            color:#fff;
+          }
+        }
+      }
+      .sperate{
+        @extend %sperate;
+      }
+      .remark{
+        @extend .remark;
+      }
+    }
+    %ul{
+      list-style:none;
+      &.collect-time{
+        li{
+          position:relative;
+          border-left:1px solid #2c49b3;
+          margin-left:55px;
+          @media only screen and (max-width:768px){
+            margin-left:40px;
+          }
+          padding-left:10px;
+          padding-bottom:10px;
+        }
+        .circle{
+          position:absolute;
+          top:8px;
+          left:-0.03rem;
+          height:0.06rem;
+          width:0.06rem;
+          border-radius:50%;
+          background-color:#2c49b3;
+        }
+      }
+      li{
+        line-height:1.8;
+        @media only screen and (max-width:768px){
+          line-height:1.5;
+        }
+      }
+    }
+    .awards{
+      width:100%;
+      @media only screen and (max-width:768px){
+        margin-top:240px;
+      }
+    }
+    .home{
+      width:100%;
+      @media only screen and (max-width:768px){
+        margin-top:240px;
+      }
+      .pc-introduction{
+        margin:20px 0;
+        @include text;
+        @media only screen and (max-width:768px){
+          position:absolute;
+          top:50px;
+          left:0;
+          background:url('../img/phone-intro-bg.png') top left no-repeat;
+          background-size:cover;
+          width:100%;
+          padding:15px;
+          color:#000;
+        }
+      }
+      .activity-bg-title{
+        @include title('../img/ac-bg.png');
+        @media only screen and (max-width:768px){
+          margin-top:100px;
+        }
+      }
+      .activity-bg{
+        width:100%;
+        padding:30px 15px;
+        margin:20px 0;
+        @include text(#ededed);
+        border:1px solid #05517d;
+        background-color:#1c2b62;
+      }
+      .activity-theme-title{
+        @include title('../img/ac-theme.png');
+      }
+      .activity-theme{
+        margin:20px 0;
+        @media only screen and (min-width:769px){
+          padding:55px 15px;
+        }
+        @media only screen and (max-width:768px){
+          padding:15px 15px;
+        }
+        @include text;
+        @include background('../img/ac-theme-bg.png',top,right,cover);
+      }
+      .activity-point-title{
+        @include title('../img/ac-point.png');
+      }
+      .activity-point{
+        margin:20px 0;
+        padding:15px;
+        @include text;
+        text-indent:0;
+        @include background('../img/ac-point-bg.png',top,left,cover);
+        ul{
+          padding:0;
+          @media only screen and (min-width:769px){
+            padding:25px 0;
+            padding-left:25%;
+          }
+          @media only screen and (max-width:768px){
+            padding:15px 0;
+            padding-left:15%;
+          }
+          list-style-image:url('../img/circle.png');
+        }
+      }
+      .design-rule-title{
+        @include title('../img/design-rule.png');
+      }
+      .design-rule{
+        margin:20px 0;
+        padding:20px 20px 20px 5%;
+        @include text;
+        text-indent:0;
+        @include background('../img/design-rule-bg.png',top,center,contain);
+        @media only screen and (max-width:768px){
+          border:1px solid #05517d;
+        }
+        background-color:#1c2b62;
+        ul{
+          list-style:none;
+          li{
+            padding:4px 0;
+          }
+        }
+      }
+      .collect-info-title{
+        @include title('../img/collect-info.png');
+      }
+      .collect-info{
+        margin:20px 0;
+        @include text;
+        padding:20px 10px 10px 5%;
+        text-indent:0;
+        @include background('../img/collect-info-bg.png',top,right,cover);
+        @media only screen and (max-width:768px){
+          border:1px solid #05517d;
+        }
+        ul{
+          list-style:none;
+          li{
+            padding:4px 0;
+            .project{
+              @include bold;
+              color:#fff;
+            }
+            .time{
+              @extend .time;
+            }
+            .phone{
+              color:#fff;
+              @media only screen and (max-width:768px){
+                color:#ffce3a;
+              }
+            }
+          }
+        }
+      }
+      .review-title{
+        @include title('../img/review.png');
+      }
+      .review{
+        width:100%;
+        overflow:hidden;
+        margin:0.2rem 0;
+        @include text;
+        padding:0.1rem 0.15rem;
+        text-indent:0;
+        @include background('../img/review-bg.png',top,left,contain);
+        @media only screen and (max-width:48em){
+          border:1px solid #05517d;
+        }
+        background-color:#1c2b62;
+        @include flexbox;
+        @include flex-direction(row);
+        @include align-content(flex-start);
+        @include flex-wrap(wrap);
+        .review-item{
+          @media only screen and (max-width:29.375em){
+            @include flex(0,0,50%);
+          }
+          @media only screen and (min-width:29.375em){
+            @include flex(1);
+          }
+         /*@include flex-shrink(0);*/
+          @media only screen and (max-width:48em){
+            padding:0.1rem 0.05rem;
+          }
+          @media only screen and (min-width:48.0125em){
+            padding:0.1rem;
+          }
+          min-width:1.3rem;
+          min-height:1.5rem;
+          .title{
+            font-size:0.62rem;
+            line-height:0.62rem;
+            font-weight:400;
+            @include text-gradinet(top,#4ecce2,#4791d2);
+          }
+          .text{
+            line-height:1.35;
+            .time{
+              @extend .time;
+            }
+          }
+        }
+      }
+      .prize-title{
+        @include title('../img/prize.png');
+      }
+      .prize{
+       @extend .prize;
+      }
+      .collect-rule-title{
+        @include title('../img/collect-rule.png');
+      }
+      .collect-rule{
+        margin:20px 0 40px 0;
+        @include text;
+        text-indent:0;
+        ul{
+          list-style:none;
+          li{
+            color:#fff;
+          }
+        }
+      }
+      @media only screen and (max-width:768px){
+        .company{
+          display:none;
+        }
+      }
+      @media only screen and (min-width:769px){
+        .company{
+          color:#fff;
+          font-size:0.17rem;
+          font-weight:500;
+          div{
+            line-height:2;
+          }
+        }
+      }
+    }
+    .showKonw{
+      position:relative;
+      .show-know-title{
+        @media only screen and (min-width:769px){
+          @include title('../img/show-know.png');
+        }
+        @media only screen and (max-width:768px){
+         @include phone-title('../img/phone-show-know.png');
+        }
+      }
+      .show-know{
+        margin:20px 0 40px 0;
+        padding:15px;
+        @media only screen and (max-width:768px){
+          padding:15px 10px;
+        }
+        @include text;
+        text-indent:0;
+        border:1px solid #05517d;
+        background:#1c2b62;
+        dl{
+          color:#fff;
+          letter-spacing:0.01rem;
+          @media only screen and (max-width:768px){
+            letter-spacing:0;
+          }
+          dt{
+            @include bold(600);
+            line-height:1.8;
+            font-size:0.16rem;
+            @media only screen and (max-width:768px){
+              font-size:0.14rem;
+            }
+          }
+          dd{
+            font-size:0.14rem;
+            @media only screen and (max-width:768px){
+              font-size:0.12rem;
+            }
+            margin-start:20px;
+            -webkit-margin-start:20px;
+            -moz-margin-start:20px;
+            margin-bottom:20px;
+            ul{
+              @extend %ul;
+              li{
+                color:#ffff00;
+              }
+            }
+            .remark{
+              padding-top:10px;
+              margin-left:55px;
+              @media only screen and (max-width:768px){
+                margin-left:40px;
+              }
+              color:#ffce3a;
+            }
+          }
+        }
+      }
+    }
+    .judgeRule{
+      position:relative;
+       .judge-rule-title{
+        @media only screen and (min-width:769px){
+          @include title('../img/judge-rule.png');
+        }
+        @media only screen and (max-width:768px){
+         @include phone-title('../img/phone-judge-rule2.png',-70px);
+        }
+      }
+      .judge-rule{
+        padding:15px;
+        @media only screen and (max-width:768px){
+          padding:15px 10px 50px 15px;
+        }
+        color:#fff;
+        border:1px solid #05517d;
+        background:#1c2b62;
+        p{
+          @include text;
+          color:#fff;
+          font-size:0.14rem;
+        }
+        .prize{
+          @extend .prize;
+          padding:0!important;
+          border:none!important;
+        }
+        dl{
+          color:#fff;
+          letter-spacing:0.01rem;
+          @media only screen and (max-width:768px){
+            letter-spacing:0;
+          }
+          dt{
+            line-height:2.2;
+            font-size:0.17rem;
+            @media only screen and (max-width:768px){
+              font-size:0.15rem;
+            }
+          }
+          dd{
+            font-size:0.12rem;
+            line-height:2;
+          }
+        }
+      }
+    }
+    .download{
+      position:relative;
+      .download-title{
+        @media only screen and (min-width:769px){
+          @include title('../img/download-file.png');
+        }
+        @media only screen and (max-width:768px){
+          @include phone-title('../img/phone-download-file2.png',-90px);
+        }
+      }
+      .download-file{
+        margin:20px 0;
+        padding:15px;
+        @media only screen and (max-width:768px){
+          padding:15px 10px 30px 15px;
+        }
+        @include text;
+        text-indent:0;
+        border:1px solid #05517d;
+        background:#1c2b62;
+        dl{
+          letter-spacing:0.01rem;
+          @media only screen and (max-width:768px){
+            letter-spacing:0;
+          }
+          color:#fff;
+          dt{
+            @include bold(600);
+            line-height:1.8;
+            font-size:0.16rem;
+            @media only screen and (max-width:768px){
+              font-size:0.14rem;
+            }
+          }
+          dd{
+            font-size:0.14rem;
+            @media only screen and (max-width:768px){
+              font-size:0.12rem;
+            } 
+            ul{
+              @extend %ul;
+            }
+          }
+        }
+        .sperate{
+          margin-top:10px;
+          @extend %sperate;
+        }
+        .btn-wrapper{
+          width:100%;
+          margin:20px 0;
+          text-align:center;
+          .download-btn{
+            width:122px;
+            height:40px;
+            color:#fff;
+            font-family:'微软雅黑';
+            font-size:0.16rem;
+            background:url('../img/btn.png') top left no-repeat;
+            background-size:cover; 
+            border:none;
+          }
+        }
+      }
+    }
+    .vote{
+      position:relative;
+      .vote-content{
+        margin:20px 0;
+        padding:15px;
+        @media only screen and (max-width:768px){
+          padding:15px 10px 30px 15px;
+        }
+        @include text;
+        text-indent:0;
+        border:1px solid #05517d;
+        background:#1c2b62;
+      }
+    }  
+  }
+}

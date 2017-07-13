@@ -1,0 +1,24 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #273566;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; }
+
+html {
+  font-size: 625%; }
+
+/*help style*/
+/*水平居中*/
+/*水平渐变*/
+/*文字渐变*/
+/*屏幕适配*/
+/*flex布局*/
+
+/*# sourceMappingURL=style.css.map */

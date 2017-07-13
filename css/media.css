@@ -1,0 +1,171 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #273566;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; }
+
+html {
+  font-size: 625%; }
+
+/*help style*/
+/*水平居中*/
+.main-content {
+  margin: 0 auto; }
+
+/*水平渐变*/
+/*文字渐变*/
+/*屏幕适配*/
+/*flex布局*/
+@media only screen and (min-width: 320px) {
+  .main-content {
+    width: 320px; } }
+@media only screen and (min-width: 375px) {
+  .main-content {
+    width: 375px; } }
+@media only screen and (min-width: 480px) {
+  .main-content {
+    width: 480px; } }
+@media only screen and (min-width: 414px) {
+  .main-content {
+    width: 414px; } }
+@media only screen and (min-width: 750px) {
+  .main-content {
+    width: 750px; } }
+.banner {
+  position: relative;
+  font-size: 0;
+  width: 100%; }
+
+.main-content {
+  position: relative;
+  padding: 15px;
+  overflow-x: hidden; }
+  @media only screen and (max-width: 768px) {
+    .main-content {
+      padding: 6px; } }
+  .main-content .intro {
+    width: 100%;
+    color: #d9d8d8;
+    text-indent: 0.308rem;
+    font-size: 0.154rem;
+    line-height: 0.2618rem;
+    padding-bottom: 20px; }
+    @media only screen and (max-width: 768px) {
+      .main-content .intro {
+        font-size: 0.14rem;
+        line-height: 1.8; } }
+    .main-content .intro .time {
+      color: #ffce3a; }
+    .main-content .intro .intent {
+      text-indent: 2.15rem; }
+      @media only screen and (max-width: 768px) {
+        .main-content .intro .intent {
+          text-indent: 1.9rem; } }
+  .main-content .picture1, .main-content .picture4 {
+    width: 100%;
+    padding: 8px;
+    background: #bfc3d0; }
+    .main-content .picture1 img, .main-content .picture4 img {
+      vertical-align: middle; }
+  .main-content .title {
+    text-align: center;
+    color: #d9d8d8;
+    font-size: 0.14rem; }
+  .main-content .mb-sm {
+    margin-bottom: 20px; }
+  .main-content .picture-wrapper {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto; }
+    .main-content .picture-wrapper .picture2-wrapper, .main-content .picture-wrapper .picture3-wrapper {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 auto; }
+    .main-content .picture-wrapper .picture2-wrapper {
+      width: 50.8%; }
+      @media only screen and (max-width: 768px) {
+        .main-content .picture-wrapper .picture2-wrapper {
+          width: 49.6%; } }
+      .main-content .picture-wrapper .picture2-wrapper .picture2 {
+        width: 100%;
+        padding: 8px;
+        background: #bfc3d0; }
+        .main-content .picture-wrapper .picture2-wrapper .picture2 img {
+          vertical-align: middle; }
+    .main-content .picture-wrapper .picture3-wrapper {
+      width: 40%; }
+      .main-content .picture-wrapper .picture3-wrapper .picture3 {
+        width: 100%;
+        padding: 8px;
+        background: #bfc3d0; }
+        .main-content .picture-wrapper .picture3-wrapper .picture3 img {
+          vertical-align: middle; }
+  .main-content .picture4 {
+    background: transparent; }
+  .main-content .website {
+    width: 100%; }
+    .main-content .website .title {
+      text-align: left;
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.18rem;
+      line-height: 2; }
+      @media only screen and (max-width: 768px) {
+        .main-content .website .title {
+          font-size: 0.16rem; } }
+    .main-content .website .indent {
+      text-indent: 2rem; }
+      @media only screen and (max-width: 768px) {
+        .main-content .website .indent {
+          text-indent: 1rem; } }
+    .main-content .website p {
+      color: #d9d8d8;
+      text-indent: 0.308rem;
+      font-size: 0.154rem;
+      line-height: 0.2618rem;
+      font-size: 0.14rem; }
+      @media only screen and (max-width: 768px) {
+        .main-content .website p {
+          font-size: 0.13rem;
+          line-height: 1.8; } }
+    .main-content .website .site {
+      color: #d9d8d8;
+      font-size: 0.15rem;
+      font-weight: 600;
+      line-height: 2;
+      text-indent: 0; }
+      @media only screen and (max-width: 768px) {
+        .main-content .website .site {
+          font-size: 0.14rem; } }
+    .main-content .website .href {
+      font-size: 0.14rem;
+      line-height: 1.8;
+      width: 100%;
+      text-decoration: underline;
+      padding-bottom: 30px; }
+      @media only screen and (max-width: 768px) {
+        .main-content .website .href {
+          font-size: 0.12rem; } }
+      .main-content .website .href a {
+        color: #ffce3a;
+        width: 100%;
+        overflow: hidden;
+        word-break: break-all; }
+    .main-content .website .audio {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #384f9e;
+      background: #334582;
+      text-align: center; }
+      .main-content .website .audio audio {
+        width: 40%;
+        vertical-align: middle; }
+
+/*# sourceMappingURL=media.css.map */

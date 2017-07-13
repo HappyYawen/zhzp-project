@@ -1,0 +1,199 @@
+@charset "UTF-8";
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+}
+html,body{
+  height:100%;
+  width:100%;
+  margin:0;
+  background:#273566;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+html{
+  font-size:625%;
+}
+/*help style*/
+/*水平居中*/
+@mixin horizontal-center {
+  margin:0 auto;
+}
+%horizontal-center {
+  @include horizontal-center;
+}
+@mixin full{
+  width:100%;
+  height:100%;
+}
+/*水平渐变*/
+@mixin liner-gradinet($direction:right,$color1:black,$color2:red,$color3:black){
+	background: -webkit-linear-gradient($direction,$color1, $color2,$color3); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient($direction,$color1, $color2,$color3); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient($direction,$color1, $color2,$color3); /* Firefox 3.6 - 15 */
+  background: linear-gradient($direction,$color1, $color2,$color3); /* 标准的语法（必须放在最后） */
+}
+%liner-gradinet {
+  @include liner-gradinet;
+}
+/*文字渐变*/
+@mixin text-gradinet($direction1,$color4,$color5){
+  background: -webkit-linear-gradient($direction1,$color4,$color5);
+  background: -o-linear-gradient($direction1,$color4, $color5); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient($direction1,$color4, $color5); /* Firefox 3.6 - 15 */
+  background: linear-gradient($direction1,$color4, $color5); /* 标准的语法（必须放在最后） */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*屏幕适配*/
+$xxs-width:320px;
+$xs-width:375px;
+$ssm-width:414px;
+$sm-width:480px;
+$md-width:750px;
+
+$screen-width:($xxs-width,$xs-width,$sm-width,$ssm-width,$md-width);
+
+$xxs: "only screen and (min-width:#{$xxs-width})";
+$xs: "only screen and (min-width:#{$xs-width})";
+$sm: "only screen and (min-width:#{$sm-width})";
+$ssm: "only screen and (min-width:#{$ssm-width})";
+$md: "only screen and (min-width:#{$md-width})";
+
+$screen:($xxs,$xs,$sm,$ssm,$md);
+/*flex布局*/
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/// Flexbox "Flex" 快捷方式 
+/// 参见： http://w3.org/tr/css3-flexbox/#flex-property
+/// @group flexbox
+/// @param $fg [1] - grow值
+/// @param $fs [null] - shrink值  
+/// @param $fb [null] - basis值
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+/// Flexbox 方向  
+/// 参见： http://w3.org/tr/css3-flexbox/#flex-direction-property
+/// @group flexbox
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+/// Flexbox 包裹  
+/// 参见： http://w3.org/tr/css3-flexbox/#flex-wrap-property
+/// @group flexbox
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else { 
+    -ms-flex-wrap: $value; 
+  }
+  -o-flex-wrap: $value;
+  flex-wrap: $value;
+}
+/// Flexbox Shrink  
+/// 参见： http://w3.org/tr/css3-flexbox/#flex-shrink-property
+/// @group flexbox  
+/// @param {Int} $int [1] - shrink值
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+/// Flexbox Align Items 
+/// 参见： http://w3.org/tr/css3-flexbox/#align-items-property
+/// @group flexbox  
+/// @param $value [stretch] - Align Items值
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+/// Flexbox Justify Content  
+/// 参见： http://w3.org/tr/css3-flexbox/#justify-content-property
+/// @group flexbox  
+/// @param $value [flex-start] - Justify Content值
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;    
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+/// Flexbox Align Content  
+/// 参见： http://w3.org/tr/css3-flexbox/#align-content-property
+/// @param $value [stretch] - Align Content值
+@mixin align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}

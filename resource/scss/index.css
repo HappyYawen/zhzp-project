@@ -1,0 +1,763 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #273566;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; }
+
+html {
+  font-size: 625%; }
+
+/*help style*/
+/*水平居中*/
+.container .pc-menu .menu-inner, .container .main-content {
+  margin: 0 auto; }
+
+/*水平渐变*/
+.container .pc-menu {
+  background: -webkit-linear-gradient(right, black, red, black);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, black, red, black);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, black, red, black);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(right, black, red, black);
+  /* 标准的语法（必须放在最后） */ }
+
+/*文字渐变*/
+/*屏幕适配*/
+/*flex布局*/
+@media only screen and (min-width: 320px) {
+  .main-content {
+    width: 320px; } }
+@media only screen and (min-width: 375px) {
+  .main-content {
+    width: 375px; } }
+@media only screen and (min-width: 480px) {
+  .main-content {
+    width: 480px; } }
+@media only screen and (min-width: 414px) {
+  .main-content {
+    width: 414px; } }
+@media only screen and (min-width: 750px) {
+  .main-content {
+    width: 750px; } }
+.banner {
+  position: relative;
+  font-size: 0;
+  width: 100%; }
+  @media only screen and (max-width: 768px) {
+    .banner .company {
+      width: 100%;
+      position: absolute;
+      bottom: 20px;
+      padding: 0 5%; }
+      .banner .company .content {
+        color: #fff;
+        padding: 10px;
+        font-size: 0.11rem;
+        background: url("../img/company.png") top left no-repeat;
+        background-size: cover; }
+        .banner .company .content div {
+          line-height: 1.5; } }
+  @media only screen and (min-width: 769px) {
+    .banner .company {
+      dispaly: none; } }
+
+.container {
+  position: relative;
+  width: 100%; }
+  .container .pc-menu {
+    height: 42px;
+    border-top: 1px solid red; }
+    .container .pc-menu .menu-inner {
+      height: 100%;
+      width: 750px;
+      line-height: 30px;
+      font-size: 0.16rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .container .pc-menu .menu-inner .menu-item {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -moz-box-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        padding: 6px 0;
+        cursor: pointer; }
+        .container .pc-menu .menu-inner .menu-item a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          color: #fff;
+          text-decoration: none;
+          border-left: 1px solid red; }
+        .container .pc-menu .menu-inner .menu-item:last-child {
+          border-right: 1px solid red; }
+      .container .pc-menu .menu-inner .active {
+        background: #470c12; }
+  .container .phone-menu {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #cb0c0a; }
+    .container .phone-menu .menu-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      .container .phone-menu .menu-wrapper .menu-item {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -moz-box-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: center;
+        padding: 12px 0 7px 0;
+        color: #fff;
+        height: 100%;
+        line-height: 1;
+        font-size: 0.11rem; }
+        .container .phone-menu .menu-wrapper .menu-item div {
+          margin-top: 5px; }
+      .container .phone-menu .menu-wrapper .media-menu-wrapper {
+        position: absolute;
+        height: 140px;
+        right: 0;
+        bottom: 64px;
+        width: 20%; }
+        .container .phone-menu .menu-wrapper .media-menu-wrapper .media-menu {
+          height: 100%;
+          width: 100%;
+          background-color: #cb0c0a; }
+          .container .phone-menu .menu-wrapper .media-menu-wrapper .media-menu .media-item {
+            margin-top: 0 !important;
+            height: 50%;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            padding: 12px 0 7px 0;
+            color: #fff;
+            line-height: 1;
+            font-size: 0.11rem; }
+            .container .phone-menu .menu-wrapper .media-menu-wrapper .media-menu .media-item div {
+              margin-top: 5px; }
+      .container .phone-menu .menu-wrapper .active {
+        background-color: #930005; }
+  @media only screen and (max-width: 768px) {
+    .container .pc-menu {
+      display: none; }
+    .container .phone-menu {
+      display: block; } }
+  .container .main-content {
+    padding: 15px;
+    overflow-x: hidden; }
+    @media only screen and (max-width: 768px) {
+      .container .main-content {
+        padding: 70px 8px 15px 8px;
+        margin-bottom: 90px;
+        margin-top: -70px; } }
+    .container .main-content .time, .container .main-content .home .collect-info ul li .time, .container .main-content .home .review .review-item .text .time {
+      font-weight: bold;
+      color: #ffce3a; }
+    .container .main-content .remark, .container .main-content .prize .remark, .container .main-content .judgeRule .judge-rule .prize .remark {
+      color: #ffce3a;
+      line-height: 1.2; }
+    .container .main-content .prize .sperate, .container .main-content .judgeRule .judge-rule .prize .sperate, .container .main-content .download .download-file .sperate {
+      height: 1px;
+      width: 100%;
+      background: -webkit-linear-gradient(left, transparent, #05517d, transparent);
+      /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(left, transparent, #05517d, transparent);
+      /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(left, transparent, #05517d, transparent);
+      /* Firefox 3.6 - 15 */
+      background: linear-gradient(left, transparent, #05517d, transparent);
+      /* 标准的语法（必须放在最后） */ }
+      .container .main-content .prize .sperate + div, .container .main-content .judgeRule .judge-rule .prize .sperate + div, .container .main-content .download .download-file .sperate + div {
+        padding: 6px 0; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .prize .sperate + div, .container .main-content .judgeRule .judge-rule .prize .sperate + div, .container .main-content .download .download-file .sperate + div {
+            font-size: 0.18rem;
+            line-height: 0.24rem;
+            min-width: 120px;
+            padding-right: 2px; } }
+        @media only screen and (min-width: 769px) {
+          .container .main-content .prize .sperate + div, .container .main-content .judgeRule .judge-rule .prize .sperate + div, .container .main-content .download .download-file .sperate + div {
+            font-size: 0.22rem;
+            line-height: 0.28rem; } }
+    .container .main-content .prizegiving {
+      margin: 20px 0;
+      color: #d9d8d8;
+      text-indent: 0.26rem;
+      font-size: 0.13rem;
+      line-height: 0.234rem;
+      padding: 20px 10px;
+      text-indent: 0;
+      background-color: #1c2b62; }
+      @media only screen and (min-width: 769px) {
+        .container .main-content .prizegiving {
+          padding: 20px 30px; } }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .prizegiving {
+          border: 1px solid #05517d; } }
+      .container .main-content .prizegiving .pc-text {
+        text-indent: 2em; }
+      .container .main-content .prizegiving .pc-head {
+        padding-top: 10px; }
+      .container .main-content .prizegiving img {
+        width: 100%;
+        height: 100%; }
+    .container .main-content .prize, .container .main-content .home .prize, .container .main-content .judgeRule .judge-rule .prize {
+      margin: 20px 0;
+      color: #d9d8d8;
+      text-indent: 0.26rem;
+      font-size: 0.13rem;
+      line-height: 0.234rem;
+      padding: 20px 10px;
+      text-indent: 0;
+      background-color: #1c2b62; }
+      @media only screen and (min-width: 769px) {
+        .container .main-content .prize, .container .main-content .home .prize, .container .main-content .judgeRule .judge-rule .prize {
+          padding: 20px 30px; } }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .prize, .container .main-content .home .prize, .container .main-content .judgeRule .judge-rule .prize {
+          border: 1px solid #05517d; } }
+      .container .main-content .prize .title, .container .main-content .judgeRule .judge-rule .prize .title {
+        font-size: 0.24rem;
+        line-height: 0.34rem;
+        background: -webkit-linear-gradient(top, #fffcf4, #ffd147);
+        background: -o-linear-gradient(top, #fffcf4, #ffd147);
+        /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(top, #fffcf4, #ffd147);
+        /* Firefox 3.6 - 15 */
+        background: linear-gradient(top, #fffcf4, #ffd147);
+        /* 标准的语法（必须放在最后） */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; }
+      .container .main-content .prize .money, .container .main-content .judgeRule .judge-rule .prize .money {
+        font-weight: bold;
+        color: #ffff00; }
+      .container .main-content .prize .prize-detail, .container .main-content .judgeRule .judge-rule .prize .prize-detail {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap; }
+        .container .main-content .prize .prize-detail .prize-detail-item {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          -moz-box-flex: 1;
+          -moz-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          padding-bottom: 10px; }
+          @media only screen and (max-width: 768px) {
+            .container .main-content .prize .prize-detail .prize-detail-item {
+              font-size: 0.18rem;
+              line-height: 0.24rem;
+              min-width: 120px;
+              padding-right: 2px; } }
+          @media only screen and (min-width: 769px) {
+            .container .main-content .prize .prize-detail .prize-detail-item {
+              font-size: 0.22rem;
+              line-height: 0.28rem; } }
+          .container .main-content .prize .prize-detail .prize-detail-item .name {
+            color: #fff; }
+    .container .main-content .showKonw .show-know dl dd ul, .container .main-content .download .download-file dl dd ul {
+      list-style: none; }
+      .container .main-content .showKonw .show-know dl dd ul.collect-time li, .container .main-content .download .download-file dl dd ul.collect-time li {
+        position: relative;
+        border-left: 1px solid #2c49b3;
+        margin-left: 55px;
+        padding-left: 10px;
+        padding-bottom: 10px; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .showKonw .show-know dl dd ul.collect-time li, .container .main-content .download .download-file dl dd ul.collect-time li {
+            margin-left: 40px; } }
+      .container .main-content .showKonw .show-know dl dd ul.collect-time .circle, .container .main-content .download .download-file dl dd ul.collect-time .circle {
+        position: absolute;
+        top: 8px;
+        left: -0.03rem;
+        height: 0.06rem;
+        width: 0.06rem;
+        border-radius: 50%;
+        background-color: #2c49b3; }
+      .container .main-content .showKonw .show-know dl dd ul li, .container .main-content .download .download-file dl dd ul li {
+        line-height: 1.8; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .showKonw .show-know dl dd ul li, .container .main-content .download .download-file dl dd ul li {
+            line-height: 1.5; } }
+    .container .main-content .awards {
+      width: 100%; }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .awards {
+          margin-top: 240px; } }
+    .container .main-content .home {
+      width: 100%; }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .home {
+          margin-top: 240px; } }
+      .container .main-content .home .pc-introduction {
+        margin: 20px 0;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .home .pc-introduction {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background: url("../img/phone-intro-bg.png") top left no-repeat;
+            background-size: cover;
+            width: 100%;
+            padding: 15px;
+            color: #000; } }
+      .container .main-content .home .activity-bg-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/ac-bg.png") center center no-repeat; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .home .activity-bg-title {
+            margin-top: 100px; } }
+      .container .main-content .home .activity-bg {
+        width: 100%;
+        padding: 30px 15px;
+        margin: 20px 0;
+        color: #ededed;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        border: 1px solid #05517d;
+        background-color: #1c2b62; }
+      .container .main-content .home .activity-theme-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/ac-theme.png") center center no-repeat; }
+      .container .main-content .home .activity-theme {
+        margin: 20px 0;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        background: url("../img/ac-theme-bg.png") top right no-repeat;
+        background-size: cover; }
+        @media only screen and (min-width: 769px) {
+          .container .main-content .home .activity-theme {
+            padding: 55px 15px; } }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .home .activity-theme {
+            padding: 15px 15px; } }
+      .container .main-content .home .activity-point-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/ac-point.png") center center no-repeat; }
+      .container .main-content .home .activity-point {
+        margin: 20px 0;
+        padding: 15px;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        text-indent: 0;
+        background: url("../img/ac-point-bg.png") top left no-repeat;
+        background-size: cover; }
+        .container .main-content .home .activity-point ul {
+          padding: 0;
+          list-style-image: url("../img/circle.png"); }
+          @media only screen and (min-width: 769px) {
+            .container .main-content .home .activity-point ul {
+              padding: 25px 0;
+              padding-left: 25%; } }
+          @media only screen and (max-width: 768px) {
+            .container .main-content .home .activity-point ul {
+              padding: 15px 0;
+              padding-left: 15%; } }
+      .container .main-content .home .design-rule-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/design-rule.png") center center no-repeat; }
+      .container .main-content .home .design-rule {
+        margin: 20px 0;
+        padding: 20px 20px 20px 5%;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        text-indent: 0;
+        background: url("../img/design-rule-bg.png") top center no-repeat;
+        background-size: contain;
+        background-color: #1c2b62; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .home .design-rule {
+            border: 1px solid #05517d; } }
+        .container .main-content .home .design-rule ul {
+          list-style: none; }
+          .container .main-content .home .design-rule ul li {
+            padding: 4px 0; }
+      .container .main-content .home .collect-info-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/collect-info.png") center center no-repeat; }
+      .container .main-content .home .collect-info {
+        margin: 20px 0;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        padding: 20px 10px 10px 5%;
+        text-indent: 0;
+        background: url("../img/collect-info-bg.png") top right no-repeat;
+        background-size: cover; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .home .collect-info {
+            border: 1px solid #05517d; } }
+        .container .main-content .home .collect-info ul {
+          list-style: none; }
+          .container .main-content .home .collect-info ul li {
+            padding: 4px 0; }
+            .container .main-content .home .collect-info ul li .project {
+              font-weight: bold;
+              color: #fff; }
+            .container .main-content .home .collect-info ul li .phone {
+              color: #fff; }
+              @media only screen and (max-width: 768px) {
+                .container .main-content .home .collect-info ul li .phone {
+                  color: #ffce3a; } }
+      .container .main-content .home .review-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/review.png") center center no-repeat; }
+      .container .main-content .home .review {
+        width: 100%;
+        overflow: hidden;
+        margin: 0.2rem 0;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        padding: 0.1rem 0.15rem;
+        text-indent: 0;
+        background: url("../img/review-bg.png") top left no-repeat;
+        background-size: contain;
+        background-color: #1c2b62;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-content: flex-start;
+        -moz-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap; }
+        @media only screen and (max-width: 48em) {
+          .container .main-content .home .review {
+            border: 1px solid #05517d; } }
+        .container .main-content .home .review .review-item {
+          /*@include flex-shrink(0);*/
+          min-width: 1.3rem;
+          min-height: 1.5rem; }
+          @media only screen and (max-width: 29.375em) {
+            .container .main-content .home .review .review-item {
+              -webkit-box-flex: 0;
+              -webkit-flex: 0 0 50%;
+              -moz-box-flex: 0;
+              -moz-flex: 0 0 50%;
+              -ms-flex: 0 0 50%;
+              flex: 0 0 50%; } }
+          @media only screen and (min-width: 29.375em) {
+            .container .main-content .home .review .review-item {
+              -webkit-box-flex: 1;
+              -webkit-flex: 1;
+              -moz-box-flex: 1;
+              -moz-flex: 1;
+              -ms-flex: 1;
+              flex: 1; } }
+          @media only screen and (max-width: 48em) {
+            .container .main-content .home .review .review-item {
+              padding: 0.1rem 0.05rem; } }
+          @media only screen and (min-width: 48.0125em) {
+            .container .main-content .home .review .review-item {
+              padding: 0.1rem; } }
+          .container .main-content .home .review .review-item .title {
+            font-size: 0.62rem;
+            line-height: 0.62rem;
+            font-weight: 400;
+            background: -webkit-linear-gradient(top, #4ecce2, #4791d2);
+            background: -o-linear-gradient(top, #4ecce2, #4791d2);
+            /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top, #4ecce2, #4791d2);
+            /* Firefox 3.6 - 15 */
+            background: linear-gradient(top, #4ecce2, #4791d2);
+            /* 标准的语法（必须放在最后） */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; }
+          .container .main-content .home .review .review-item .text {
+            line-height: 1.35; }
+      .container .main-content .home .prize-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/prize.png") center center no-repeat; }
+      .container .main-content .home .collect-rule-title {
+        width: 100%;
+        margin: 30px 0;
+        height: 60px;
+        background: url("../img/collect-rule.png") center center no-repeat; }
+      .container .main-content .home .collect-rule {
+        margin: 20px 0 40px 0;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        text-indent: 0; }
+        .container .main-content .home .collect-rule ul {
+          list-style: none; }
+          .container .main-content .home .collect-rule ul li {
+            color: #fff; }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .home .company {
+          display: none; } }
+      @media only screen and (min-width: 769px) {
+        .container .main-content .home .company {
+          color: #fff;
+          font-size: 0.17rem;
+          font-weight: 500; }
+          .container .main-content .home .company div {
+            line-height: 2; } }
+    .container .main-content .showKonw {
+      position: relative; }
+      @media only screen and (min-width: 769px) {
+        .container .main-content .showKonw .show-know-title {
+          width: 100%;
+          margin: 30px 0;
+          height: 60px;
+          background: url("../img/show-know.png") center center no-repeat; } }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .showKonw .show-know-title {
+          position: absolute;
+          top: -90px;
+          width: 100%;
+          height: 40px;
+          background: url("../img/phone-show-know.png") center center no-repeat;
+          background-size: contain; } }
+      .container .main-content .showKonw .show-know {
+        margin: 20px 0 40px 0;
+        padding: 15px;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        text-indent: 0;
+        border: 1px solid #05517d;
+        background: #1c2b62; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .showKonw .show-know {
+            padding: 15px 10px; } }
+        .container .main-content .showKonw .show-know dl {
+          color: #fff;
+          letter-spacing: 0.01rem; }
+          @media only screen and (max-width: 768px) {
+            .container .main-content .showKonw .show-know dl {
+              letter-spacing: 0; } }
+          .container .main-content .showKonw .show-know dl dt {
+            font-weight: 600;
+            line-height: 1.8;
+            font-size: 0.16rem; }
+            @media only screen and (max-width: 768px) {
+              .container .main-content .showKonw .show-know dl dt {
+                font-size: 0.14rem; } }
+          .container .main-content .showKonw .show-know dl dd {
+            font-size: 0.14rem;
+            margin-start: 20px;
+            -webkit-margin-start: 20px;
+            -moz-margin-start: 20px;
+            margin-bottom: 20px; }
+            @media only screen and (max-width: 768px) {
+              .container .main-content .showKonw .show-know dl dd {
+                font-size: 0.12rem; } }
+            .container .main-content .showKonw .show-know dl dd ul li {
+              color: #ffff00; }
+            .container .main-content .showKonw .show-know dl dd .remark {
+              padding-top: 10px;
+              margin-left: 55px;
+              color: #ffce3a; }
+              @media only screen and (max-width: 768px) {
+                .container .main-content .showKonw .show-know dl dd .remark {
+                  margin-left: 40px; } }
+    .container .main-content .judgeRule {
+      position: relative; }
+      @media only screen and (min-width: 769px) {
+        .container .main-content .judgeRule .judge-rule-title {
+          width: 100%;
+          margin: 30px 0;
+          height: 60px;
+          background: url("../img/judge-rule.png") center center no-repeat; } }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .judgeRule .judge-rule-title {
+          position: absolute;
+          top: -70px;
+          width: 100%;
+          height: 40px;
+          background: url("../img/phone-judge-rule2.png") center center no-repeat;
+          background-size: contain; } }
+      .container .main-content .judgeRule .judge-rule {
+        padding: 15px;
+        color: #fff;
+        border: 1px solid #05517d;
+        background: #1c2b62; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .judgeRule .judge-rule {
+            padding: 15px 10px 50px 15px; } }
+        .container .main-content .judgeRule .judge-rule p {
+          color: #d9d8d8;
+          text-indent: 0.26rem;
+          font-size: 0.13rem;
+          line-height: 0.234rem;
+          color: #fff;
+          font-size: 0.14rem; }
+        .container .main-content .judgeRule .judge-rule .prize {
+          padding: 0 !important;
+          border: none !important; }
+        .container .main-content .judgeRule .judge-rule dl {
+          color: #fff;
+          letter-spacing: 0.01rem; }
+          @media only screen and (max-width: 768px) {
+            .container .main-content .judgeRule .judge-rule dl {
+              letter-spacing: 0; } }
+          .container .main-content .judgeRule .judge-rule dl dt {
+            line-height: 2.2;
+            font-size: 0.17rem; }
+            @media only screen and (max-width: 768px) {
+              .container .main-content .judgeRule .judge-rule dl dt {
+                font-size: 0.15rem; } }
+          .container .main-content .judgeRule .judge-rule dl dd {
+            font-size: 0.12rem;
+            line-height: 2; }
+    .container .main-content .download {
+      position: relative; }
+      @media only screen and (min-width: 769px) {
+        .container .main-content .download .download-title {
+          width: 100%;
+          margin: 30px 0;
+          height: 60px;
+          background: url("../img/download-file.png") center center no-repeat; } }
+      @media only screen and (max-width: 768px) {
+        .container .main-content .download .download-title {
+          position: absolute;
+          top: -90px;
+          width: 100%;
+          height: 40px;
+          background: url("../img/phone-download-file2.png") center center no-repeat;
+          background-size: contain; } }
+      .container .main-content .download .download-file {
+        margin: 20px 0;
+        padding: 15px;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        text-indent: 0;
+        border: 1px solid #05517d;
+        background: #1c2b62; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .download .download-file {
+            padding: 15px 10px 30px 15px; } }
+        .container .main-content .download .download-file dl {
+          letter-spacing: 0.01rem;
+          color: #fff; }
+          @media only screen and (max-width: 768px) {
+            .container .main-content .download .download-file dl {
+              letter-spacing: 0; } }
+          .container .main-content .download .download-file dl dt {
+            font-weight: 600;
+            line-height: 1.8;
+            font-size: 0.16rem; }
+            @media only screen and (max-width: 768px) {
+              .container .main-content .download .download-file dl dt {
+                font-size: 0.14rem; } }
+          .container .main-content .download .download-file dl dd {
+            font-size: 0.14rem; }
+            @media only screen and (max-width: 768px) {
+              .container .main-content .download .download-file dl dd {
+                font-size: 0.12rem; } }
+        .container .main-content .download .download-file .sperate {
+          margin-top: 10px; }
+        .container .main-content .download .download-file .btn-wrapper {
+          width: 100%;
+          margin: 20px 0;
+          text-align: center; }
+          .container .main-content .download .download-file .btn-wrapper .download-btn {
+            width: 122px;
+            height: 40px;
+            color: #fff;
+            font-family: '微软雅黑';
+            font-size: 0.16rem;
+            background: url("../img/btn.png") top left no-repeat;
+            background-size: cover;
+            border: none; }
+    .container .main-content .vote {
+      position: relative; }
+      .container .main-content .vote .vote-content {
+        margin: 20px 0;
+        padding: 15px;
+        color: #d9d8d8;
+        text-indent: 0.26rem;
+        font-size: 0.13rem;
+        line-height: 0.234rem;
+        text-indent: 0;
+        border: 1px solid #05517d;
+        background: #1c2b62; }
+        @media only screen and (max-width: 768px) {
+          .container .main-content .vote .vote-content {
+            padding: 15px 10px 30px 15px; } }
+
+/*# sourceMappingURL=index.css.map */
