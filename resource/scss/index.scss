@@ -1,6 +1,4 @@
-@charset "utf-8";
 @import 'style.scss';
-
 @for $i from 1 through length($screen){
   @media #{nth($screen,$i)} {
     .main-content{
@@ -22,11 +20,21 @@
   position:relative;
   font-size:0;
   width:100%;
+  .media-btn{
+    position:absolute;
+    border:none;
+    color:#fff;
+    background: url('../img/btn-bg.png') top center no-repeat;
+    background-size: 100%;
+    font-family: '微软雅黑';
+    outline: none;
+    cursor: pointer;
+  }
   @media only screen and (max-width:768px){
     .company{
       width:100%;
       position:absolute;
-      bottom:20px;
+      bottom: -50px;
       padding:0 5%;
       .content{
         color:#fff;
@@ -39,12 +47,33 @@
         }
       }
     }
+    .media-btn{
+      bottom:110px;
+      left:25%;
+      font-size: 0.15rem;
+      line-height: 15px;
+      font-weight: bold;
+      letter-spacing: 0.02rem;
+      width: 50%;
+      height: 8.8%;
+    }
   }
   @media only screen and (min-width:769px){
     .company{
       dispaly:none;
     }
+    .media-btn{
+      bottom:30px;
+      left:40%;
+      font-size: 0.3rem;
+      line-height: 30px;
+      font-weight: bold;
+      letter-spacing: 0.02rem;
+      width: 22%;
+      height: 13.5%;
+    }
   }
+
 }
 .container{
   position:relative;
@@ -209,29 +238,6 @@
         padding:6px 0;
       }
     }
-    .prizegiving{
-      margin:20px 0;
-      @include text;
-      padding:20px 10px;
-      @media only screen and (min-width:769px){
-        padding:20px 30px;
-      }
-      text-indent:0;
-      @media only screen and (max-width:768px){
-        border:1px solid #05517d;
-      }
-      background-color:#1c2b62;
-      .pc-text{
-        text-indent: 2em;
-      }
-      .pc-head{
-        padding-top: 10px;
-      }
-      img{
-        width: 100%;
-        height: 100%;
-      }
-    }
     .prize{
       margin:20px 0;
       @include text;
@@ -302,23 +308,17 @@
         }
       }
     }
-    .awards{
-      width:100%;
-      @media only screen and (max-width:768px){
-        margin-top:240px;
-      }
-    }
     .home{
       width:100%;
       @media only screen and (max-width:768px){
-        margin-top:240px;
+        margin-top:350px;
       }
       .pc-introduction{
         margin:20px 0;
         @include text;
         @media only screen and (max-width:768px){
           position:absolute;
-          top:50px;
+          top: 120px;
           left:0;
           background:url('../img/phone-intro-bg.png') top left no-repeat;
           background-size:cover;

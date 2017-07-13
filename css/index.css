@@ -52,11 +52,20 @@ html {
   position: relative;
   font-size: 0;
   width: 100%; }
+  .banner .media-btn {
+    position: absolute;
+    border: none;
+    color: #fff;
+    background: url("../img/btn-bg.png") top center no-repeat;
+    background-size: 100%;
+    font-family: '微软雅黑';
+    outline: none;
+    cursor: pointer; }
   @media only screen and (max-width: 768px) {
     .banner .company {
       width: 100%;
       position: absolute;
-      bottom: 20px;
+      bottom: -50px;
       padding: 0 5%; }
       .banner .company .content {
         color: #fff;
@@ -65,10 +74,28 @@ html {
         background: url("../img/company.png") top left no-repeat;
         background-size: cover; }
         .banner .company .content div {
-          line-height: 1.5; } }
+          line-height: 1.5; }
+    .banner .media-btn {
+      bottom: 110px;
+      left: 25%;
+      font-size: 0.15rem;
+      line-height: 15px;
+      font-weight: bold;
+      letter-spacing: 0.02rem;
+      width: 50%;
+      height: 8.8%; } }
   @media only screen and (min-width: 769px) {
     .banner .company {
-      dispaly: none; } }
+      dispaly: none; }
+    .banner .media-btn {
+      bottom: 30px;
+      left: 40%;
+      font-size: 0.3rem;
+      line-height: 30px;
+      font-weight: bold;
+      letter-spacing: 0.02rem;
+      width: 22%;
+      height: 13.5%; } }
 
 .container {
   position: relative;
@@ -211,28 +238,6 @@ html {
           .container .main-content .prize .sperate + div, .container .main-content .judgeRule .judge-rule .prize .sperate + div, .container .main-content .download .download-file .sperate + div {
             font-size: 0.22rem;
             line-height: 0.28rem; } }
-    .container .main-content .prizegiving {
-      margin: 20px 0;
-      color: #d9d8d8;
-      text-indent: 0.26rem;
-      font-size: 0.13rem;
-      line-height: 0.234rem;
-      padding: 20px 10px;
-      text-indent: 0;
-      background-color: #1c2b62; }
-      @media only screen and (min-width: 769px) {
-        .container .main-content .prizegiving {
-          padding: 20px 30px; } }
-      @media only screen and (max-width: 768px) {
-        .container .main-content .prizegiving {
-          border: 1px solid #05517d; } }
-      .container .main-content .prizegiving .pc-text {
-        text-indent: 2em; }
-      .container .main-content .prizegiving .pc-head {
-        padding-top: 10px; }
-      .container .main-content .prizegiving img {
-        width: 100%;
-        height: 100%; }
     .container .main-content .prize, .container .main-content .home .prize, .container .main-content .judgeRule .judge-rule .prize {
       margin: 20px 0;
       color: #d9d8d8;
@@ -318,16 +323,11 @@ html {
         @media only screen and (max-width: 768px) {
           .container .main-content .showKonw .show-know dl dd ul li, .container .main-content .download .download-file dl dd ul li {
             line-height: 1.5; } }
-    .container .main-content .awards {
-      width: 100%; }
-      @media only screen and (max-width: 768px) {
-        .container .main-content .awards {
-          margin-top: 240px; } }
     .container .main-content .home {
       width: 100%; }
       @media only screen and (max-width: 768px) {
         .container .main-content .home {
-          margin-top: 240px; } }
+          margin-top: 350px; } }
       .container .main-content .home .pc-introduction {
         margin: 20px 0;
         color: #d9d8d8;
@@ -337,7 +337,7 @@ html {
         @media only screen and (max-width: 768px) {
           .container .main-content .home .pc-introduction {
             position: absolute;
-            top: 50px;
+            top: 120px;
             left: 0;
             background: url("../img/phone-intro-bg.png") top left no-repeat;
             background-size: cover;
